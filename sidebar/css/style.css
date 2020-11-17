@@ -1,52 +1,81 @@
-/* Sidebar */
-#sidebar-wrapper {
-    z-index: 1;
-    position: absolute;
-    width: 0;
-    height: 100%;
-    overflow-y: hidden;
-    background: #2C3E50;
-    border: 2px solid red;
-    opacity: 0.9;
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-/* Always take up entire screen */
-#page-content-wrapper {
-    width: 100%;
-    position: absolute;
-    padding: 15px;
-    border: 5px solid blue;
-}
-
-
-/* Change with of sidebar from 0 to 250px */
-#wrapper.menuDisplayed #sidebar-wrapper {
-    width: 250px;
-}
-
-/* Since we added left padding, we need to shrink the width by 250px */
-#wrapper.menuDisplayed #page-content-wrapper {
-    padding-left: 250px;
-}
-
-
-/* Sidebar styling - the entire ul list */
-.sidebar-nav {
-    padding: 0;
-    list-style: none;
-}
-
-.sidebar-nav li {
-    text-indent: 20px;
-    line-height: 40px;
-}
-
-.sidebar-nav li a {
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
     display: block;
-    text-decoration: none;
-    color: #ddd;
 }
 
-.sidebar-nav li a:hover {
-    background: #16A085;
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+#sidebar {
+    min-width: 300px;
+    max-width: 300px;
+    height: 100vh;
+    background: #1d1919;
+    color: #fff;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    
+}
+#sidebar.active {
+    margin-left: -300px;
+}
+   #sidebar ul li a {
+       padding: 10px 0;
+       display: block;
+       color: rgba(255, 255, 255, 0.8);
+       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+   }
+    #sidebar ul li a:hover {
+        color: #f8b739;
+    }
+
+    #sidebar ul li.active>a {
+        background: transparent;
+        color: #f8b739;
+    }
+      @media (max-width: 991.98px) {
+    #sidebar {
+      margin-left: -300px; }
+      #sidebar.active {
+        margin-left: 0; } }
+        a[data-toggle="collapse"] {
+            position: relative;
+        }
+        .align-items-stretch {
+            -webkit-box-align: stretch !important;
+            -ms-flex-align: stretch !important;
+            align-items: stretch !important;
+        }
+.navbar-collapse {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
